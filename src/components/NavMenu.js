@@ -13,7 +13,6 @@ export const NavMenu = () => {
                 <Container>
                     <NavbarBrand tag={Link} to="/">QueerCoding</NavbarBrand>
                     <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-  
                 </Container>
             </Navbar>
         </header>
