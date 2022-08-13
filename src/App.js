@@ -1,8 +1,13 @@
-import { Route } from 'react-router';
+import {Route} from 'react-router';
+import { Layout } from './components/Layout';
 import { MainPage } from './components/MainPage';
 
+
 export const App = () => {
+    
     return (
-        <Route exact path='/' component={MainPage} />
+        <Layout>
+            <Route exact path='/' component={MainPage} />
+        </Layout>
     );
 }
