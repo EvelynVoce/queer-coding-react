@@ -1,7 +1,8 @@
+import { Route } from 'react-router';
+import { MainPage } from './components/MainPage';
+
 export const App = () => {
-  return (
-    <div className="d-flex justify-content-center">
-      <h1>QueerCoding</h1>
-    </div>
-  );
+    return (
+        <Route exact path='/' component={MainPage} />
+    );
 }
