@@ -1,4 +1,4 @@
-﻿import { CardDeck, Card } from 'reactstrap';
+﻿import { CardDeck, Card, CardBody, CardText } from 'reactstrap';
 
 export const MainPage = () => {
     return (
@@ -20,41 +20,41 @@ export const MainPage = () => {
             <h1 className="d-flex justify-content-center"><u>Our classes</u></h1>
             <CardDeck className="my-5">
                 <Card>
-                    <div className="card-body">
+                    <CardBody>
                         <h5 className="card-title"><b>Python</b></h5>
-                        <p className="card-text">
+                        <CardText>
                             This class provides a solid foundation in programming teaching data types,
                             logical operators, loops and object-orientated programming. A perfect entry point
                             for those who want to begin their journey in software development, this class is 
                             also recommended before taking the machine learning class.
-                        </p>
-                    </div>
+                        </CardText>
+                    </CardBody>
                 </Card>
                 
                 <Card>
-                    <div className="card-body">
+                    <CardBody>
                         <h5 className="card-title"><b>Web Development</b></h5>
-                        <p className="card-text">
+                        <CardText>
                             Web development is a broad field of study that covers the development of websites. In this
                             class we will cover the fundamentals of web development, HTML, CSS and JavaScript. We will
                             also look at a framework to aid the development of websites, bootstrap. Heres an example of
                             a website made using only techniques taught in this class 
                             <a href="https://evelynvoce.github.io/" target="_"> Example website</a>
-                        </p>
-                    </div>
+                        </CardText>
+                    </CardBody>
                 </Card>
 
                 <Card>
-                    <div className="card-body">
+                    <CardBody>
                         <h5 className="card-title"><b>Data analysis  Machine Learning</b></h5>
-                        <p className="card-text">
+                        <CardText>
                             This data analysis class will teach you the fundamentals of data analysis and machine
                             learning. Using a real world data set to analyse the salaries of developers based on a
                             variety of attributes such as age, gender, sexuality and much more and then using
                             machine learning to predict whether developers will earn more or less than the
                             average income based on this data.
-                        </p>
-                    </div>
+                        </CardText>
+                    </CardBody>
                 </Card>
                 
             </CardDeck>
