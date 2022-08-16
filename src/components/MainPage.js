@@ -5,13 +5,13 @@ export const MainPage = () => {
         <div className="my-3">
             <h1 className="d-flex justify-content-center"><u>QueerCoding</u></h1>
             <div className="row my-5">
-                <div className="col-md-6 d-flex justify-content-center">
-                    <p>temp</p>
+                <div className="col-md-3 d-flex justify-content-left">
+                    <img className="img-fluid" src="/images/Evelyn2.jpg" alt="Logo" />
                 </div>
-                <div className="col-md-6 d-flex justify-content-center">
-                    <p className="main-font">QueerCoding's goal is to educate and inspire members of the LGBTQ+ community to take
-                        their first step into tech. Providing them with the skills and confidence to
-                        begin their journey become developers and data analysts.
+                <div className="col-md-9 d-flex justify-content-center">
+                    <p className="main-font">QueerCoding's goal is to educate and inspire members of the LGBTQ+
+                        community to take their first step into tech. Providing them with the skills and
+                        confidence to begin their journey become developers and data analysts.
                     </p>
                 </div>
             </div>
