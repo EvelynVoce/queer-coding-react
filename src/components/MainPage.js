@@ -8,16 +8,29 @@ export const MainPage = () => {
                 <div className="col-md-3 d-flex justify-content-left">
                     <img className="img-fluid" src="/images/Evelyn2.jpg" alt="Logo" />
                 </div>
-                <div className="col-md-9 d-flex justify-content-center">
-                    <p className="main-font">QueerCoding's goal is to educate and inspire members of the LGBTQ+
+                
+                <div className="col-md-9 justify-content-center">
+                    
+                    <p>
+                        QueerCoding's goal is to educate and inspire members of the LGBTQ+
                         community to take their first step into tech. Providing them with the skills and
-                        confidence to begin their journey become developers and data analysts.
+                        confidence to begin their journey become developers and data analysts. Representing these often
+                        underrepresented groups in the industry is vitally important to creating a inclusive
+                        and diverse community and to removing the long standing bias in tech.
                     </p>
+                    
+                    <p>
+                        At this time, QueerCoding is ran by Evelyn Voce, a trans woman with a degree in
+                        computer science and a background in software development. She teaches all of our classes and
+                        will be the primary source of contact during our events.
+                    </p>
+                    
                 </div>
             </div>
             
             
             <h1 className="d-flex justify-content-center"><u>Our classes</u></h1>
+            
             <CardDeck className="my-5">
                 <Card>
                     <CardBody>
@@ -56,8 +69,14 @@ export const MainPage = () => {
                         </CardText>
                     </CardBody>
                 </Card>
-                
             </CardDeck>
+
+            <p>
+                Please note more clases are planned including a more advanced Wev development class which utilises
+                React JS, APIs and SQL. It is currently unclear when these courses will become available due to the time
+                committment of creating resources and teaching four classes a week. This being said I am dedicated
+                to making this class happen so be sure to chec for updates here.
+            </p>
         </div>
     );
 }
