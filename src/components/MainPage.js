@@ -1,6 +1,13 @@
 ﻿import { CardDeck, Card, CardBody, CardText } from 'reactstrap';
+import {useHistory} from "react-router-dom";
 
 export const MainPage = () => {
+    const history = useHistory();
+    
+    const registerClass = () => {
+        history.push('/Register')
+    };
+    
     return (
         <div className="my-3">
             <h1 className="d-flex justify-content-center"><u>QueerCoding</u></h1>
@@ -77,6 +84,8 @@ export const MainPage = () => {
                 committment of creating resources and teaching four classes a week. This being said I am dedicated
                 to making this class happen so be sure to chec for updates here.
             </p>
+
+            <button onClick={registerClass}> Register for class </button>
         </div>
     );
 }
