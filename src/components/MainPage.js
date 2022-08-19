@@ -15,9 +15,9 @@ export const MainPage = () => {
                 <div className="col-md-3 d-flex justify-content-left">
                     <img className="img-fluid" src="/images/Evelyn2.jpg" alt="Logo" />
                 </div>
-                
+
                 <div className="col-md-9 justify-content-center">
-                    
+
                     <p>
                         QueerCoding's goal is to educate and inspire members of the LGBTQ+
                         community to take their first step into tech. Providing them with the skills and
@@ -25,19 +25,19 @@ export const MainPage = () => {
                         underrepresented groups in the industry is vitally important to creating a inclusive
                         and diverse community and to removing the long standing bias in tech.
                     </p>
-                    
+
                     <p>
                         At this time, QueerCoding is ran by Evelyn Voce, a trans woman with a degree in
                         computer science and a background in software development. She teaches all of our classes and
                         will be the primary source of contact during our events.
                     </p>
-                    
+
                 </div>
             </div>
-            
-            
-            <h1 className="d-flex justify-content-center"><u>Our classes</u></h1>
-            
+
+            <hr/>
+            <h1 className="d-flex justify-content-center my-5"><u>Our classes</u></h1>
+
             <CardDeck className="my-5">
                 <Card>
                     <CardBody>
@@ -45,12 +45,12 @@ export const MainPage = () => {
                         <CardText>
                             This class provides a solid foundation in programming teaching data types,
                             logical operators, loops and object-orientated programming. A perfect entry point
-                            for those who want to begin their journey in software development, this class is 
+                            for those who want to begin their journey in software development, this class is
                             also recommended before taking the machine learning class.
                         </CardText>
                     </CardBody>
                 </Card>
-                
+
                 <Card>
                     <CardBody>
                         <h5 className="card-title"><b>Web Development</b></h5>
@@ -58,7 +58,7 @@ export const MainPage = () => {
                             Web development is a broad field of study that covers the development of websites. In this
                             class we will cover the fundamentals of web development, HTML, CSS and JavaScript. We will
                             also look at a framework to aid the development of websites, bootstrap. Heres an example of
-                            a website made using only techniques taught in this class 
+                            a website made using only techniques taught in this class
                             <a href="https://evelynvoce.github.io/" target="_"> Example website</a>
                         </CardText>
                     </CardBody>
@@ -85,7 +85,10 @@ export const MainPage = () => {
                 to making this class happen so be sure to chec for updates here.
             </p>
 
-            <button onClick={registerClass}> Register for class </button>
+            <div className="d-flex justify-content-center my-5">
+                <button onClick={registerClass}> Register for class </button>
+            </div>
         </div>
+        
     );
 }
