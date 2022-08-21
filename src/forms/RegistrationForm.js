@@ -19,10 +19,18 @@ export default function RegistrationForm() {
                    {...register("firstName", { required: true })}
             />
             <input className="form-field" placeholder="Surname"
-                   {...register("surname", { required: true, minLength: 8 })}
+                   {...register("surname", { required: true})}
             />
+            
+            <label className="my-1"> Class: </label>
+            <select className="form-field">
+                <option value="python"> Python Fundamentals </option>
+                <option value="web"> Web Development </option>
+                <option value="ML-DA"> Machine Learning and Data Analysis </option>
+            </select>    
+            
             <button type="submit">Submit</button>
-            {errors.surname && <p> Regisration unsuccessful</p>}
+            {(errors.firstName || errors.surname) && <p> Regisration unsuccessful</p>}
 
             {show ?
                 <div className="mt-4 d-flex justify-content-center">
