@@ -18,10 +18,36 @@ export default function RegistrationForm() {
             <input className="form-field" placeholder="First Name"
                    {...register("firstName", { required: true })}
             />
+            
             <input className="form-field" placeholder="Surname"
                    {...register("surname", { required: true})}
             />
-            
+
+            <input className="form-field" placeholder="Age"
+                   {...register("age", { required: true})}
+            />
+
+            <label className="my-1"> Sexuality: </label>
+            <select className="form-field">
+                <option value="lesbian"> Lesbian </option>
+                <option value="gay"> Gay </option>
+                <option value="bisexual"> Bisexual </option>
+                <option value="asexual"> Asexual </option>
+                <option value="heterosexual"> Heterosexual </option>
+                <option value="other-sexuality"> Other </option>
+            </select>
+
+            <label className="my-1"> Gender Identity: </label>
+            <select className="form-field">
+                <option value="male"> Male </option>
+                <option value="female"> Female </option>
+                <option value="trans-male"> Transgender Male </option>
+                <option value="trans-female"> Transgender Female </option>
+                <option value="gender-fluid"> Gender Fluid </option>
+                <option value="agender"> Agender </option>
+                <option value="other-gender"> Other </option>
+            </select>
+
             <label className="my-1"> Class: </label>
             <select className="form-field">
                 <option value="python"> Python Fundamentals </option>
