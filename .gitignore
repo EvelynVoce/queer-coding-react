@@ -10,10 +10,18 @@
 # production
 /build
 
-# Custom
+# front-end
 /node_modules
 /client_app/node_modules
 /client_app/.idea
+
+# back-end
+back_end/WebApplication1/.idea
+back_end/WebApplication1/.idea.WebApplication1
+back_end/WebApplication1/WebApplication1/bin
+back_end/WebApplication1/WebApplication1/obj
+back_end/WebApplication1/WebApplication1/Properties
+.xml
 
 # misc
 .DS_Store
