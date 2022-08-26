@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import {useHistory} from "react-router-dom";
+import {registerAttendance} from "../api/registration";
 
 export default function RegistrationForm() {
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
@@ -9,6 +10,7 @@ export default function RegistrationForm() {
 
     const onSubmit = useCallback((formValues) => {
         console.log("Surname " + formValues.surname)
+        registerAttendance(formValues.surname);
     },
         [history, setError],
     )
