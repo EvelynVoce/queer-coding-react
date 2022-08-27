@@ -9,8 +9,7 @@ export default function RegistrationForm() {
     const history = useHistory();
 
     const onSubmit = useCallback((formValues) => {
-        console.log("Surname " + formValues.surname)
-        registerAttendance(formValues.surname);
+        registerAttendance(formValues.forename, formValues.surname, formValues.age);
     },
         [history, setError],
     )
@@ -18,7 +17,7 @@ export default function RegistrationForm() {
     return (
         <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
             <input className="form-field" placeholder="First Name"
-                   {...register("firstName", { required: true })}
+                   {...register("forename", { required: true })}
             />
             
             <input className="form-field" placeholder="Surname"

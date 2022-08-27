@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 public class AttendanceDefinition
 {
-    public string? UserId { get; set; }
+    public string? Forename { get; set; }
+    public string? Surname { get; set; }
+    public string? Age { get; set; }
 }
 
 
@@ -15,7 +17,7 @@ public class RegistrationController : ControllerBase
     [HttpPost("api/registration")]
     public async Task<IActionResult> ConfirmAttendance([FromBody] AttendanceDefinition definition)
     {
-        Console.WriteLine(definition.UserId);
+        Console.WriteLine(definition.Forename);
         return Ok();
     }
 }

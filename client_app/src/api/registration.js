@@ -1,5 +1,5 @@
 ﻿import { client } from "./http-helpers";
 
-export const registerAttendance = (surname) => {
-    return client.post('registration', { surname }).then(response => response.data);
+export const registerAttendance = (forename, surname, age) => {
+    return client.post('registration', { forename, surname, age }).then(response => response.data);
 }
