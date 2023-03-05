@@ -1,15 +1,10 @@
 ﻿import { CardDeck, Card, CardBody, CardText } from 'reactstrap';
-import {useHistory} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const MainPage = () => {
-    const history = useHistory();
-    
-    const registerClass = () => {
-        history.push('/Register')
-    };
     
     return (
-        <div className="my-3">
+        <div className="my-5">
             <h1 className="d-flex justify-content-center"><u>QueerCoding</u></h1>
             <div className="row my-5">
                 <div className="col-md-6 d-flex justify-content-left">
@@ -37,10 +32,10 @@ export const MainPage = () => {
 
             <hr/>
             <h1 className="d-flex justify-content-center my-5"><u>Our classes</u></h1>
-
+            
             <CardDeck className="my-5">
                 <Card>
-                    <CardBody>
+                    <CardBody className="pink-deck">
                         <h5 className="card-title"><b>Python</b></h5>
                         <CardText>
                             This class provides a solid foundation in programming teaching data types,
@@ -52,20 +47,20 @@ export const MainPage = () => {
                 </Card>
 
                 <Card>
-                    <CardBody>
+                    <CardBody className="pink-deck">
                         <h5 className="card-title"><b>Web Development</b></h5>
                         <CardText>
-                            Web development is a broad field of study that covers the development of websites. In this
-                            class we will cover the fundamentals of web development, HTML, CSS and JavaScript. We will
-                            also look at a framework to aid the development of websites, bootstrap. Heres an example of
-                            a website made using only techniques taught in this class
-                            <a href="https://evelynvoce.github.io/" target="_"> Example website</a>
+                            Web development is a broad field of study that covers the development of
+                            websites. In this class we will cover the fundamentals of web development,
+                            HTML, CSS and JavaScript. We will also look at a framework to aid the development
+                            of websites, bootstrap. Heres an example of a website made using only techniques taught
+                            in this class <a href="https://evelynvoce.github.io/" target="_"> Example website</a>
                         </CardText>
                     </CardBody>
                 </Card>
 
                 <Card>
-                    <CardBody>
+                    <CardBody className="pink-deck">
                         <h5 className="card-title"><b>Data analysis  Machine Learning</b></h5>
                         <CardText>
                             This data analysis class will teach you the fundamentals of data analysis and machine
@@ -86,8 +81,11 @@ export const MainPage = () => {
             </p>
 
             <div className="d-flex justify-content-center my-5">
-                <button onClick={registerClass}> Register for class </button>
-            </div>
+                <Link to="/Register">
+                    <button> Register for class </button>
+                </Link>
+            </div>    
+            
         </div>
         
     );

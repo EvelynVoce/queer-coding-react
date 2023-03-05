@@ -5,3 +5,8 @@
 .navbar {
     background-color: lightpink;
 }
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+}

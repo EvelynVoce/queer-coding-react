@@ -1,45 +1,70 @@
-import React, { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
-import {useHistory} from "react-router-dom";
+import React, { useState } from 'react';
 import {registerAttendance} from "../api/registration";
 
 export default function RegistrationForm() {
-    const { register, handleSubmit, setError, formState: { errors } } = useForm();
-    const [show, setShow] = useState(false)
-    const history = useHistory();
+    const [firstName, setFirstName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [age, setAge] = useState('');
+    const [gender, setGender] = useState('');
+    const [sexuality, setSexuality] = useState('');
+    const [course, setCourse] = useState('');
+    const [errors, setErrors] = useState({});
 
-    const onSubmit = useCallback((formValues) => {
-        registerAttendance(formValues.forename, formValues.surname, formValues.age);
-    },
-        [history, setError],
-    )
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
+        const newErrors = {};
+        if (age < 18) {
+            newErrors.age = 'You must be over 18 to register';
+        }
 
-    return (
-        <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-            <input className="form-field" placeholder="First Name"
-                   {...register("forename", { required: true })}
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+        }
+        
+        registerAttendance(firstName, surname, age).then((response) => {
+            console.log(response.data);
+        })
+    };
+
+        return (
+        <form className="register-form" onSubmit={handleSubmit}>
+
+            <label> First Name: </label>
+            <input
+                type="text"
+                className="form-field"
+                placeholder="First Name"
+                value={firstName}
+                onChange={(event) => setFirstName(event.target.value)}
+                required
             />
             
-            <input className="form-field" placeholder="Surname"
-                   {...register("surname", { required: true})}
+            <label> Surname: </label>
+            <input
+                type="text"
+                className="form-field"
+                placeholder="Surname"
+                value={surname}
+                onChange={(event) => setSurname(event.target.value)}
+                required
             />
-
-            <input className="form-field" placeholder="Age"
-                   {...register("age", { required: true})}
+            
+            <label> Age: </label>
+            <input
+                type="number"
+                className="form-field"
+                placeholder="Age"
+                value={age}
+                onChange={(event) => setAge(event.target.value)}
+                required
             />
+            {errors.age && <p style={{ color: 'red' }}>{errors.age}</p>}
 
-            <label className="my-1"> Sexuality: </label>
-            <select className="form-field">
-                <option value="lesbian"> Lesbian </option>
-                <option value="gay"> Gay </option>
-                <option value="bisexual"> Bisexual </option>
-                <option value="asexual"> Asexual </option>
-                <option value="heterosexual"> Heterosexual </option>
-                <option value="other-sexuality"> Other </option>
-            </select>
-
-            <label className="my-1"> Gender Identity: </label>
-            <select className="form-field">
+            <label> Gender: </label>
+            <select className="form-field"
+                    value={gender} onChange={(event) => setGender(event.target.value)} required>
+                <option value="">Please select</option>
                 <option value="male"> Male </option>
                 <option value="female"> Female </option>
                 <option value="trans-male"> Transgender Male </option>
@@ -49,22 +74,28 @@ export default function RegistrationForm() {
                 <option value="other-gender"> Other </option>
             </select>
 
-            <label className="my-1"> Class: </label>
-            <select className="form-field">
+            <label> Sexuality: </label>
+            <select className="form-field"
+                    value={sexuality} onChange={(event) => setSexuality(event.target.value)} required>
+                <option value="">Please select</option>
+                <option value="lesbian"> Lesbian </option>
+                <option value="gay"> Gay </option>
+                <option value="bisexual"> Bisexual </option>
+                <option value="asexual"> Asexual </option>
+                <option value="heterosexual"> Heterosexual </option>
+                <option value="other-sexuality"> Other </option>
+            </select>
+
+            <label> Course: </label>
+            <select className="form-field"
+                    value={course} onChange={(event) => setCourse(event.target.value)} required>
+                <option value="">Please select</option>
                 <option value="python"> Python Fundamentals </option>
                 <option value="web"> Web Development </option>
                 <option value="ML-DA"> Machine Learning and Data Analysis </option>
-            </select>    
+            </select>
             
-            <button type="submit">Submit</button>
-            {(errors.firstName || errors.surname) && <p> Regisration unsuccessful</p>}
-
-            {show ?
-                <div className="mt-4 d-flex justify-content-center">
-                    <div className="spinner-border text-primary" role="status"></div>
-                    <span className=" mx-3">Loading...</span>
-                </div> : null
-            }
+            <button type="submit">Register</button>
         </form>
     );
 }
