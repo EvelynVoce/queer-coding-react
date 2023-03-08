@@ -1,23 +1,30 @@
-using WebApplication1;
-
-var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
-
-builder.Services.AddCors(options =>
+namespace WebApplication1;
+using Registration;
+internal class Program
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy  =>
+    internal static async Task Main(string[] args)
+    {
+        const string  myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+        var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddControllers();
+
+        builder.Services
+            .AddRegistration();
+
+        builder.Services.AddCors(options =>
         {
-            policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-        });
+            options.AddPolicy(name: myAllowSpecificOrigins,
+                policy  =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
     
-});
+        });
 
-var app = builder.Build();
-app.MapControllers();
-app.UseCors(MyAllowSpecificOrigins);
-app.MapGet("/", () => "Hello World!");
-
-app.Run();
+        var app = builder.Build();
+        app.MapControllers();
+        app.UseCors(myAllowSpecificOrigins);
+        await app.RunAsync();
+    }
+}

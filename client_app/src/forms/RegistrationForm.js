@@ -22,12 +22,14 @@ export default function RegistrationForm() {
             setErrors(newErrors);
         }
         
-        registerAttendance(firstName, surname, age).then((response) => {
+        console.log(sexuality)
+        
+        registerAttendance(firstName, surname, age, gender, sexuality, course).then((response) => {
             console.log(response.data);
         })
     };
 
-        return (
+    return (
         <form className="register-form" onSubmit={handleSubmit}>
 
             <label> First Name: </label>
