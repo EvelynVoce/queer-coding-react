@@ -74,10 +74,10 @@ export const MainPage = () => {
             </CardDeck>
 
             <p>
-                Please note more clases are planned including a more advanced Wev development class which utilises
+                Please note more clases are planned including a more advanced Web development class which utilises
                 React JS, APIs and SQL. It is currently unclear when these courses will become available due to the time
                 committment of creating resources and teaching four classes a week. This being said I am dedicated
-                to making this class happen so be sure to chec for updates here.
+                to making this class happen so be sure to check for updates here.
             </p>
 
             <div className="d-flex justify-content-center my-5">

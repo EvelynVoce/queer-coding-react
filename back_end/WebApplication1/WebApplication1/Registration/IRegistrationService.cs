@@ -2,5 +2,5 @@
 using Controllers;
 public interface IRegistrationService
 {
-    void RegisterAttendance(AttendanceDefinition definition);
+    Task RegisterAttendance(AttendanceDefinition definition);
 }
