@@ -2,11 +2,16 @@
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-.navbar {
-    background-color: lightpink;
+.navbar-dark .nav-link {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
 }
 
-.sticky-nav {
-    position: sticky;
-    top: 0;
+.navbar-dark .nav-link:hover {
+    color: hotpink;
+}
+
+.active {
+    color: hotpink !important;
 }

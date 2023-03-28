@@ -42,5 +42,27 @@ public class RegistrationService : IRegistrationService
                 "dbo.Users_Insert @FirstName, @Surname, @Age, @Gender, @Sexuality, @Course, @UserID", eg1);
         }
     }
+    /*public async Task RegisterAttendance(AttendanceDefinition definition)
+    {
+        await using (var connection = new SqlConnection(Helper.CnnVal("QueerCodingUsers")))
+        {
+            const string insertQuery = "INSERT INTO [dbo].[Users]" +
+                                       " (FirstName, Surname, Age, Gender, Sexuality, Course, UserID)" +
+                                       " VALUES (@FirstName, @Surname, @Age, @Gender, @Sexuality, @Course, @UserID)";
+            Console.WriteLine(insertQuery);
+            SqlCommand cmd = new SqlCommand(insertQuery, connection); 
+        
+            cmd.Parameters.AddWithValue("@FirstName", definition.Forename);
+            cmd.Parameters.AddWithValue("@Surname", definition.Surname);
+            cmd.Parameters.AddWithValue("@Age", definition.Age);
+            cmd.Parameters.AddWithValue("@Gender", definition.Gender);
+            cmd.Parameters.AddWithValue("@Sexuality", definition.Sexuality);
+            cmd.Parameters.AddWithValue("@Course", definition.Course);
+            cmd.Parameters.AddWithValue("@UserID", Guid.NewGuid());
+            
+            await cmd.ExecuteNonQueryAsync();
+            Console.WriteLine("Done");
+        }
+    }*/
 }
 

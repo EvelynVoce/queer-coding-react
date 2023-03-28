@@ -1,4 +1,4 @@
-import {Route} from 'react-router';
+import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { MainPage } from './components/MainPage';
 import {RegisterPage} from "./components/RegisterPage";

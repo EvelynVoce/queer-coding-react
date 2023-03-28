@@ -5,7 +5,7 @@ export const MainPage = () => {
     
     return (
         <div className="my-5">
-            <h1 className="d-flex justify-content-center"><u>QueerCoding</u></h1>
+            <h1 className="d-flex justify-content-center title"><u>QueerCoding</u></h1>
             <div className="row my-5">
                 <div className="col-md-6 d-flex justify-content-left">
                     <img className="img-fluid" src="/images/Evelyn2.jpg" alt="Logo" />
