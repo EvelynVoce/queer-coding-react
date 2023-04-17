@@ -1,6 +1,6 @@
 ﻿namespace QueerCodingBackEnd.Registration;
-using Controllers;
+using Models;
 public interface IRegistrationService
 {
-    Task RegisterAttendance(AttendanceDefinition definition);
+    Task RegisterAttendance(AttendeeModel definition);
 }
