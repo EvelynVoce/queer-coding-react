@@ -17,12 +17,10 @@ export default function RegistrationForm() {
         if (age < 18) {
             newErrors.age = 'You must be over 18 to register';
         }
-
+        
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
         }
-        
-        console.log(sexuality)
         
         registerAttendance(firstName, surname, age, gender, sexuality, course).then((response) => {
             console.log(response.data);
